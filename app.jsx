@@ -535,7 +535,7 @@ function Showcase() {
   const phones = [
   { src: 'uploads/barber calendar.png', label: 'จองร้านเสริมสวย' },
   { src: 'uploads/class booking.png', label: 'จองคลาส' },
-  { src: 'uploads/Payment.png', label: 'ชำระเงิน' },
+  { src: 'uploads/Phone_Payment.png', label: 'ชำระเงิน' },
   { src: 'uploads/Line noti.png', label: 'แจ้งเตือน LINE' }];
 
   return (
