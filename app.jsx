@@ -137,7 +137,7 @@ function App() {
     const selectors = [
     '.sec-h', '.ind-card', '.feat-card', '.show-phone-wrap',
     '.proc-step', '.faq-item', '.contact-card', '.proof-item',
-    '.hero-visual'];
+    '.hero-visual', '.show-phone-item', '.demo-phone-wrap', '.demo-copy'];
 
     const targets = document.querySelectorAll(selectors.join(','));
     targets.forEach((el, i) => {
@@ -162,9 +162,14 @@ function App() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px 0px 0px' }
     );
     targets.forEach((el) => io.observe(el));
+
+    // Fallback: force all reveal elements visible after 2s (iOS safety net)
+    const fallback = setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.in)').forEach((el) => el.classList.add('in'));
+    }, 2000);
 
     // 3. Cursor-follow glow on cards (sets --mx/--my CSS vars)
     const cards = document.querySelectorAll('.ind-card, .feat-card');
@@ -225,6 +230,7 @@ function App() {
     return () => {
       io.disconnect();
       countIO.disconnect();
+      clearTimeout(fallback);
       cards.forEach((c) => c.removeEventListener('pointermove', onMove));
       magnets.forEach((m) => {
         m.removeEventListener('pointermove', onMag);
