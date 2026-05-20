@@ -938,7 +938,7 @@ function Footer() {
   return (
     <footer className="foot">
       <div className="container foot-row">
-        <span>© 2026 {BRAND.name} · \u0e23\u0e30\u0e1a\u0e1a\u0e08\u0e2d\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c</span>
+        <span>© 2026 {BRAND.name} · ระบบจองครบวงจร</span>
         <span className="foot-r">
           <a href="#top">กลับขึ้นด้านบน ↑</a>
         </span>
