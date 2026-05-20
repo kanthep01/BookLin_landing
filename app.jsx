@@ -126,7 +126,7 @@ function App() {
             idx++;
           });
           node.parentNode.replaceChild(frag, node);
-        } else if (node.nodeType === 1 && node.tagName !== 'BR') {
+        } else if (node.nodeType === 1 && node.tagName !== 'BR' && node.tagName !== 'EM') {
           [...node.childNodes].forEach(walk);
         }
       };
@@ -938,7 +938,7 @@ function Footer() {
   return (
     <footer className="foot">
       <div className="container foot-row">
-        <span>© 2026 {BRAND.name} · ระบบจองครบวงจร</span>
+        <span>© 2026 {BRAND.name} · ระบบจองครบวงจร </span>
         <span className="foot-r">
           <a href="#top">กลับขึ้นด้านบน ↑</a>
         </span>

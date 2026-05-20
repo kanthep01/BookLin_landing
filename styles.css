@@ -1968,6 +1968,8 @@ em { font-style: italic; font-family: var(--font-display); font-weight: 500; col
   .proof-item { padding: 0; }
 }
 @media (max-width: 600px) {
+  .show-phones-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .show-phone-item img { border-radius: 6px; }
   .container { padding: 0 20px; }
   .hero-cta-row .btn { flex: 1; justify-content: center; }
   .ind-grid { grid-template-columns: 1fr; }
